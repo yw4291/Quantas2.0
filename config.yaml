@@ -1,0 +1,61 @@
+######################
+#1.mapping with STAR #
+######################
+fastq_dir: "/mnt/chromatin/raw_data/RNAseq/Paola-NSD1-022024-reRUN2/raw" 
+genome_dir: "/v5/star_wy" #genomefile file directory
+output_dir_mapping: "results/step1_mapping"
+threads: 16
+
+# STAR parameters
+star_params:
+  outFilterMismatchNmax: 999
+  outFilterMismatchNoverReadLmax: 0.06
+  outFilterIntronMotifs: RemoveNoncanonicalUnannotated
+  alignSJoverhangMin: 5
+  alignSJDBoverhangMin: 5
+  chimSegmentMin: 0
+
+#######################
+#2.convert sam to bed #
+#######################
+output_dir_bed: "results/step2_bedfiles"
+sam2bed_params:
+  primary_only: 1
+  uniq_only: 0
+  reverse_strand: 0
+  use_rna_strand: 1
+threads_sam2bed: 16
+
+#####################
+#3.reads Statistics #
+#####################
+output_dir_stats: "results/step3_mapping_stats"
+
+
+######################
+#4.Splice Site Usage #
+######################
+output_dir_splice: "results/step4_splice_usage"
+ssu_params:
+  min_anchor: 5
+  big_file: false
+  weight: false
+  separate_strand: false
+  cache_dir: "cache"
+
+
+
+#################################
+# 5. Generate Expression Matrix #
+#################################
+output_dir_expression: "results/step5_expression_matrix"
+config_file: "config/in.conf"
+
+# Expression matrix parameters
+expression_matrix_params:
+  pseudo_count: 1
+  log2_transform: true
+  raw_count: false
+
+# Output file
+expression_matrix_output: "results/expression_matrix.txt"
