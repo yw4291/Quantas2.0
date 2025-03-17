@@ -22,6 +22,7 @@ Snakemake workflow for quantifying splicing from raw FASTQ sequencing files, fea
 Getting Started
 -------------------
 See [**--&gt; the Wiki pages &lt;--**](https://github.com/yw4291/Quantas2.0/wiki) for setup and documentation.
+
 For **questions, bug reports, and feature requests**,
 [open an issue](https://github.com/yw4291/Quantas2.0/issues).
 
