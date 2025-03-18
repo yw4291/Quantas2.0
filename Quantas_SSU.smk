@@ -125,20 +125,3 @@ rule summarize_usage:
         "scripts/summarize_splice_sites.py"
 
 
-# 5. Generate Expression Matrix
-rule gen_expression_matrix:
-    input:
-        expand("{output_dir_splice}/{sample}.splice_usage.txt", output_dir_splice=config["output_dir_splice"], sample=get_samples("samples.txt"))
-    output:
-        "results/expression_matrix.txt"
-    # log:
-    #     "logs/expression_matrix.log"
-    threads: config["threads"]
-    shell:
-        """
-        python scripts/gen_expression_matrix.py {input} {output} \
-        {config[expression_matrix_params][pseudo_count]} \
-        {config[expression_matrix_params][log2_transform]} \
-        {config[expression_matrix_params][raw_count]} \
-        > "logs/{wildcards.sample}_expmatrix.log" 2>&1
-        """
