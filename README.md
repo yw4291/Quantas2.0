@@ -35,7 +35,7 @@ This table descriped all the sub-workflows contains in Quantas2.0.0:
 | Reference genome `fasta` file; <br> Per-sample `fastq` files | Quantas_SSU|Quantification of the normalized 5' and 3' splicing site usage in each gene (value ranges from 0 to 1); <br>`Sample`is the name of each iput FASTQ file|  Reads aligned file:`Sample.Aligned.out.sam` <br>  Sam file to bed file:`Sample.bed` <br> Coverage and statistics of mapped reads:`Sample.mapping_stats.txt` <br> Splice site usage of each splice site:`.splice_site_counts.txt` <br> Statistics of splice site usage in each gene:`sumarry.txt` <br>Snakemake report (optional) 
 |Reference genome `fasta` file; <br> Per-sample `fastq` files | Quantas_RNA_expr|Quantification of the RNA expression level(RPKM) for each gene | RNA expression level(RPKM)matrix:`expression_matrix.txt`; <br> Snakemake report (optional) | 
 
-**Tools used in this process:**
+**Software/Packages used in this process:**
 
   - Read mapping (single or paired end)
     - [STAR](https://adapterremoval.readthedocs.io/en/latest/)
