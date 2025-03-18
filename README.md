@@ -31,7 +31,7 @@ This table descriped all the sub-workflows contains in Quantas2.0.0:
 **Software/Packages used in this process:**
 
   - Read mapping (single or paired end)
-    - [STAR](https://adapterremoval.readthedocs.io/en/latest/)
+    - [STAR](https://github.com/alexdobin/STAR)
     - [OLego](https://zhanglab.c2b2.columbia.edu/index.php/OLego)
   - Convert sam file to bed file
     - [pysam](http://www.htslib.org/doc/samtools-view.html)
