@@ -19,13 +19,6 @@ Quantas2 is a Snakemake-based workflow for quantifying splicing from raw FASTQ s
   - Simple configuration via a single file
   - Resuming from failing jobs
 
-Getting Started
--------------------
-See [**--&gt; the Wiki pages &lt;--**](https://github.com/yw4291/Quantas2.0/wiki) for setup and documentation.
-
-For **questions, bug reports, and feature requests**,
-[open an issue](https://github.com/yw4291/Quantas2.0/issues).
-
 
 Pipeline Overview
 -------------------
@@ -42,4 +35,10 @@ This table descriped all the sub-workflows contains in Quantas2.0.0:
     - [OLego](https://zhanglab.c2b2.columbia.edu/index.php/OLego)
   - Convert sam file to bed file
     - [pysam](http://www.htslib.org/doc/samtools-view.html)
-  
+
+Getting Started
+-------------------
+See [**--&gt; the Wiki pages &lt;--**](https://github.com/yw4291/Quantas2.0/wiki) for setup and documentation.
+
+For **questions, bug reports, and feature requests**,
+[open an issue](https://github.com/yw4291/Quantas2.0/issues).
