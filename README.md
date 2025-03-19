@@ -30,7 +30,7 @@ Quantas2 is a Snakemake-based workflow for quantifying splicing from raw FASTQ s
 * Continuous integration and testing
 
 ### 🤖 ML Researchers 
-* Dealing with data for downstream ML models, eg.DeltaSplice
+* Dealing with data for downstream ML models, eg.[DeltaSplice](https://github.com/chaolinzhanglab/DeltaSplice) 
 
 ### 🤝 Everyone benefits from
 * A collaborative hub and focal point for multidisciplinary work on data
