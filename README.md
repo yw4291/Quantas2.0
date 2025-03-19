@@ -19,6 +19,26 @@ Quantas2 is a Snakemake-based workflow for quantifying splicing from raw FASTQ s
   - Simple configuration via a single file
   - Resuming from failing jobs
 
+## Who uses Quantas?
+
+### 🧬 Biologists 
+* One command to deal with multiple FASTQ files
+* Pipeline-oriented workflows and configure in one file to set  parameters for mapping and quantification
+
+### ☕ Software Engineers
+* Extensible sub-workflows and data
+* Continuous integration and testing
+
+### 🤖 ML Researchers 
+* Dealing with data for downstream ML models, eg.DeltaSplice
+
+### 🤝 Everyone benefits from
+* A collaborative hub and focal point for multidisciplinary work on data
+* For academic and non-commercial use
+
+
+
+
 
 Workflow Overview
 -------------------
