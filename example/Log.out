@@ -1,0 +1,89 @@
+STAR version=2.7.11b
+STAR compilation time,server,dir=2024-01-29T15:15:38+0000 :/opt/conda/conda-bld/star_1706541070242/work/source
+##### Command Line:
+/mnt/chromatin/home/yw4291/software/envs/starinstall/bin/STAR-avx2 --runMode genomeGenerate --runThreadN 8 --genomeDir ./star_wy --genomeFastaFiles ./hg19.fa --sjdbFileChrStartEnd ../../cz2294/data/dbCASE/db_hg19/exon_junctions/hg19.intron.hmr.inclusive.star.txt
+##### Initial USER parameters from Command Line:
+###### All USER parameters from Command Line:
+runMode                       genomeGenerate        ~RE-DEFINED
+runThreadN                    8     ~RE-DEFINED
+genomeDir                     ./star_wy     ~RE-DEFINED
+genomeFastaFiles              ./hg19.fa        ~RE-DEFINED
+sjdbFileChrStartEnd           ../../cz2294/data/dbCASE/db_hg19/exon_junctions/hg19.intron.hmr.inclusive.star.txt        ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runMode                           genomeGenerate   
+runThreadN                        8
+genomeDir                         ./star_wy
+genomeFastaFiles                  ./hg19.fa   
+sjdbFileChrStartEnd               ../../cz2294/data/dbCASE/db_hg19/exon_junctions/hg19.intron.hmr.inclusive.star.txt   
+
+-------------------------------
+##### Final effective command line:
+/mnt/chromatin/home/yw4291/software/envs/starinstall/bin/STAR-avx2   --runMode genomeGenerate      --runThreadN 8   --genomeDir ./star_wy   --genomeFastaFiles ./hg19.fa      --sjdbFileChrStartEnd ../../cz2294/data/dbCASE/db_hg19/exon_junctions/hg19.intron.hmr.inclusive.star.txt   
+----------------------------------------
+
+Number of fastq files for each mate = 1
+ParametersSolo: --soloCellFilterType CellRanger2.2 filtering parameters:  3000 0.99 10
+Finished loading and checking parameters
+--genomeDir directory exists and will be overwritten: ./star_wy/
+Mar 04 18:31:39 ... starting to generate Genome files
+./hg19.fa : chr # 0  "chr10" chrStart: 0
+./hg19.fa : chr # 1  "chr11" chrStart: 135790592
+./hg19.fa : chr # 2  "chr12" chrStart: 271056896
+./hg19.fa : chr # 3  "chr13" chrStart: 405012480
+./hg19.fa : chr # 4  "chr14" chrStart: 520355840
+./hg19.fa : chr # 5  "chr15" chrStart: 627834880
+./hg19.fa : chr # 6  "chr16" chrStart: 730595328
+./hg19.fa : chr # 7  "chr17" chrStart: 821035008
+./hg19.fa : chr # 8  "chr18" chrStart: 902299648
+./hg19.fa : chr # 9  "chr19" chrStart: 980418560
+./hg19.fa : chr # 10  "chr1" chrStart: 1039663104
+./hg19.fa : chr # 11  "chr20" chrStart: 1288962048
+./hg19.fa : chr # 12  "chr21" chrStart: 1352138752
+./hg19.fa : chr # 13  "chr22" chrStart: 1400373248
+./hg19.fa : chr # 14  "chr2" chrStart: 1451753472
+./hg19.fa : chr # 15  "chr3" chrStart: 1695023104
+./hg19.fa : chr # 16  "chr4" chrStart: 1893203968
+./hg19.fa : chr # 17  "chr5" chrStart: 2084569088
+./hg19.fa : chr # 18  "chr6" chrStart: 2265710592
+./hg19.fa : chr # 19  "chr7" chrStart: 2436890624
+./hg19.fa : chr # 20  "chr8" chrStart: 2596274176
+./hg19.fa : chr # 21  "chr9" chrStart: 2742812672
+./hg19.fa : chr # 22  "chrX" chrStart: 2884108288
+./hg19.fa : chr # 23  "chrY" chrStart: 3039559680
+Chromosome sequence lengths: 
+chr10	135534747
+chr11	135006516
+chr12	133851895
+chr13	115169878
+chr14	107349540
+chr15	102531392
+chr16	90354753
+chr17	81195210
+chr18	78077248
+chr19	59128983
+chr1	249250621
+chr20	63025520
+chr21	48129895
+chr22	51304566
+chr2	243199373
+chr3	198022430
+chr4	191154276
+chr5	180915260
+chr6	171115067
+chr7	159138663
+chr8	146364022
+chr9	141213431
+chrX	155270560
+chrY	59373566
+Genome sequence total length = 3095677412
+Genome size with padding = 3099066368
+Mar 04 18:32:22   Loaded database junctions from the pGe.sjdbFileChrStartEnd file(s), total number of junctions:365907
+
+Estimated genome size with padding and SJs: total=genome+SJ=3300066368 = 3099066368 + 201000000
+GstrandBit=32
+Number of SA indices: 5722654262
+Mar 04 18:32:27 ... starting to sort Suffix Array. This may take a long time...
+Number of chunks: 27;   chunks size limit: 1860140024 bytes
+Mar 04 18:32:38 ... sorting Suffix Array chunks and saving them to disk...

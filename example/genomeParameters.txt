@@ -1,0 +1,19 @@
+### /mnt/chromatin/home/yw4291/software/envs/starinstall/bin/STAR-avx2   --runMode genomeGenerate      --runThreadN 8   --genomeDir ./star_wy   --genomeFastaFiles ./hg19.fa      --sjdbFileChrStartEnd ../../cz2294/data/dbCASE/db_hg19/exon_junctions/hg19.intron.hmr.inclusive.star.txt   
+### GstrandBit 32
+versionGenome	2.7.4a
+genomeType	Full
+genomeFastaFiles	./hg19.fa 
+genomeSAindexNbases	14
+genomeChrBinNbits	18
+genomeSAsparseD	1
+genomeTransformType	None
+genomeTransformVCF	-
+sjdbOverhang	100
+sjdbFileChrStartEnd	../../cz2294/data/dbCASE/db_hg19/exon_junctions/hg19.intron.hmr.inclusive.star.txt 
+sjdbGTFfile	-
+sjdbGTFchrPrefix	-
+sjdbGTFfeatureExon	exon
+sjdbGTFtagExonParentTranscript	transcript_id
+sjdbGTFtagExonParentGene	gene_id
+sjdbInsertSave	Basic
+genomeFileSizes	3172597796 24209565018
