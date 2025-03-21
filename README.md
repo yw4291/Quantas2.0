@@ -45,7 +45,7 @@ This table descriped all the sub-workflows contains in Quantas2.0.0:
 
   - Read mapping (single or paired end)
     - [STAR](https://github.com/alexdobin/STAR)
-    - [OLego](https://zhanglab.c2b2.columbia.edu/index.php/OLego)
+    - Or [OLego](https://zhanglab.c2b2.columbia.edu/index.php/OLego)
   - Convert sam file to bed file
     - [pysam](https://github.com/pysam-developers/pysam)
 
