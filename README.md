@@ -55,3 +55,10 @@ See [**--&gt; the Wiki pages &lt;--**](https://github.com/yw4291/Quantas2.0/wiki
 
 For **questions, bug reports, and feature requests**,
 [open an issue](https://github.com/yw4291/Quantas2.0/issues).
+
+## Acknowledgements
+
+This project was developed with reference to the following open-source repositories:
+
+- [grenepipe](https://github.com/moiexpositoalonsolab/grenepipe/tree/master) and  [ModelGenerator](https://github.com/genbio-ai/ModelGenerator)  – for project structure and documentation style
+
