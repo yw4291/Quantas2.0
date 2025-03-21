@@ -60,5 +60,5 @@ For **questions, bug reports, and feature requests**,
 
 This project was developed with reference to the following open-source repositories:
 
-- [grenepipe](https://github.com/moiexpositoalonsolab/grenepipe/tree/master) and  [ModelGenerator](https://github.com/genbio-ai/ModelGenerator)  – for project structure and documentation style
+- [ModelGenerator](https://github.com/genbio-ai/ModelGenerator) and [grenepipe](https://github.com/moiexpositoalonsolab/grenepipe/tree/master) – for project structure and documentation style
 
