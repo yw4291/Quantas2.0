@@ -56,7 +56,7 @@ See [**--&gt; the Wiki pages &lt;--**](https://github.com/yw4291/Quantas2.0/wiki
 For **questions, bug reports, and feature requests**,
 [open an issue](https://github.com/yw4291/Quantas2.0/issues).
 
-## Acknowledgements
+## Citation
 
 This project was developed with reference to the following open-source repositories:
 
