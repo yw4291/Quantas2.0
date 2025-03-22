@@ -135,29 +135,3 @@ rule summarize_usage:
     script:
         "scripts/summarize_splice_sites.py"
 
-
-
-
-
-############
-#save codes#
-############
-# rule summarize_usage:
-#     input:
-#         "results/{sample}_splice_site_counts.txt"
-#     output:
-#         "{output_dir_splice}/{sample}.splice_usage.txt"
-#     log:
-#         "logs/{sample}_summarize_usage.log"
-#     script:
-#         "scripts/summarize_splice_sites.py"
-
-# rule summarize_usage:
-#     input:
-#         "results/{sample}_splice_site_counts.txt"
-#     output:
-#         "results/step4_splice_usage/{sample}.splice_usage.txt"
-#     log:
-#         "logs/{sample}_summarize_usage.log"
-#     script:
-#         "scripts/summarize_splice_sites.py"
