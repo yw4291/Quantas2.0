@@ -5,31 +5,50 @@ def get_samples(sample_file):
     with open(sample_file, "r") as f:
         return [line.strip().split('.')[0] for line in f if line.strip()]
 
+
 rule all:
     input:
+        "results/step0_check/.created",
         "results/step1_mapping/.created",
         "results/step2_bedfiles/.created",
-        "results/step3_splice_usage/.created",
-        "results/step4_expression_matrix/.created",
-        "results/mapping_stats/.created",
+        "results/step3_mapping_stats/.created",
+        "results/step4_splice_usage/.created",
+        expand("results/step0_check/{sample}_fastq_checked.ok", sample=get_samples("samples.txt")),
         expand("{output_dir_mapping}/{sample}.Aligned.out.sam", output_dir_mapping=config["output_dir_mapping"], sample=get_samples("samples.txt")),
         expand("{output_dir_bed}/{sample}.bed", output_dir_bed=config["output_dir_bed"], sample=get_samples("samples.txt")),
-        expand("{output_dir_stats}/{sample}_mapping_stats.txt",output_dir_stats=config["output_dir_stats"],sample=get_samples("samples.txt")),
+        #expand("{output_dir_stats}/{sample}_mapping_stats.txt", output_dir_stats=config["output_dir_stats"], sample=get_samples("samples.txt")),
+        expand("{output_dir_stats}/{sample}_mapping_stats.txt", output_dir_stats=config["output_dir_stats"], sample=get_samples("samples.txt")),
         expand("{output_dir_splice}/{sample}.splice_usage.txt", output_dir_splice=config["output_dir_splice"], sample=get_samples("samples.txt")),
-        "results/expression_matrix.txt"
-
-#Output directory
+        expand("{output_dir_splice}/processed/{sample}.bed", output_dir_splice=config["output_dir_splice"], sample=get_samples("samples.txt")),
+        expand("results/{sample}_splice_site_counts.txt", sample=get_samples("samples.txt"))
+        
+#output directory
 rule create_dirs:
     output:
+        touch("results/step0_check/.created"),
         touch("results/step1_mapping/.created"),
         touch("results/step2_bedfiles/.created"),
-        touch("results/step3_splice_usage/.created"),
-        touch("results/step4_expression_matrix/.created"),
-        touch("results/mapping_stats/.created")
+        touch("results/step3_mapping_stats/.created"),
+        touch("results/step4_splice_usage/.created"),
+        touch(config["output_dir_splice"] + "/processed/.created")
     shell:
         """
-        mkdir -p results/step1_mapping results/step2_bedfiles results/step3_splice_usage results/step4_expression_matrix
+        mkdir -p results/step0_check results/step1_mapping results/step2_bedfiles \
+        results/step3_mapping_stats {config[output_dir_splice]}/processed
         """
+
+#check_fastq_exists
+rule check_fastq_exists:
+    input:
+        r1 = lambda wildcards: f"{config['fastq_dir']}/{wildcards.sample}_R1.fastq.gz",
+        r2 = lambda wildcards: f"{config['fastq_dir']}/{wildcards.sample}_R2.fastq.gz"
+    output:
+        touch("results/step0_check/{sample}_fastq_checked.ok")
+    message:
+        "FASTQ files exist for sample {wildcards.sample}"
+    shell:
+        "touch {output}"
+
 # 1. STAR Mapping
 rule mapping_star:
     input:
@@ -70,58 +89,75 @@ rule sam_to_bed:
 # 3. Reads Statistics
 rule mapping_stats:
     input:
-        sam=lambda wildcards: f"{config['output_dir_mapping']}/{wildcards.sample}.Aligned.out.sam", #"{output_dir_mapping}/{sample}.Aligned.out.sam",
-        bed=lambda wildcards: f"{config['output_dir_bed']}/{wildcards.sample}.bed" #"{output_dir_bed}/{sample}.bed"
+        sam=lambda wildcards: f"{config['output_dir_mapping']}/{wildcards.sample}.Aligned.out.sam",
+        bed=lambda wildcards: f"{config['output_dir_bed']}/{wildcards.sample}.bed"
     output:
         "{output_dir_stats}/{sample}_mapping_stats.txt"
-    # log:
-    #     "logs/mapping_stats.log"
+    log:
+        "{output_dir_stats}/{sample}_read_stats.log"
     threads: config["threads"]
     shell:
         """
-        python scripts/mapping_stats.py {input.sam} {input.bed} {output} > "logs/{wildcards.sample}_read_stats.log" 2>&1
+        python scripts/mapping_stats.py {input.sam} {input.bed} {output} > {log} 2>&1
         """
 
-# 4. Summarize Splice Site Usage
-# rule summarize_splice_usage:
-#     input:
-#         lambda wildcards: f"{config['output_dir_bed']}/{wildcards.sample}.bed" #"{output_dir_bed}/{sample}.bed"
-#     output:
-#         "{output_dir_splice}/{sample}.splice_usage.txt"
-#     # log:
-#     #     "logs/{sample}_splice_usage.log"
-#     threads: config["threads"]
-#     shell:
-#         """
-#         python scripts/summarize_splice_sites.py {input} {output} \
-#         {config[ssu_params][min_anchor]} {config[ssu_params][big_file]} \
-#         {config[ssu_params][weight]} {config[ssu_params][separate_strand]} \
-#         > "logs/{wildcards.sample}_sumarize_ssu.log" 2>&1
-#         """
 
-rule filter_bed:
-    input:
-        "data/tag.bed"
-    output:
-        "processed/tag_filtered.bed"
-    script:
-        "scripts/bed_parser.py"
+
+# 4. Summarize Splice Site Usage
+# rule count_splice_sites:
+#     input:
+#         intron=lambda wildcards: config["intron_bed"],
+#         tag=lambda wildcards: f"{config['output_dir_bed']}/{wildcards.sample}.bed"
+#     output:
+#         "results/{sample}_splice_site_counts.txt"
+#     script:
+#         "scripts/splice_site_usage.py"
 
 rule count_splice_sites:
     input:
-        intron="data/intron.bed",
-        tag="processed/tag_filtered.bed"
+        annotation="annotation_files/hg19.intron.hmr.inclusive.plus.Lister.bed",
+        bed=lambda wildcards: f"{config['output_dir_bed']}/{wildcards.sample}.bed" #"results/step2_bedfiles/{sample}.bed"
     output:
-        "results/splice_site_counts.txt"
-    script:
-        "scripts/splice_site_usage.py"
+        "results/{sample}_splice_site_counts.txt"
+    shell:
+        """
+        python scripts/splice_site_usage.py {input.annotation} {input.bed} {output}
+        """
+
 
 rule summarize_usage:
     input:
-        "results/splice_site_counts.txt"
+        "results/{sample}_splice_site_counts.txt"
     output:
-        "results/summary.txt"
+        "{output_dir_splice}/{sample}.splice_usage.txt"
+    log:
+        "{output_dir_splice}/{sample}_summarize_usage.log"
     script:
         "scripts/summarize_splice_sites.py"
 
 
+
+
+
+############
+#save codes#
+############
+# rule summarize_usage:
+#     input:
+#         "results/{sample}_splice_site_counts.txt"
+#     output:
+#         "{output_dir_splice}/{sample}.splice_usage.txt"
+#     log:
+#         "logs/{sample}_summarize_usage.log"
+#     script:
+#         "scripts/summarize_splice_sites.py"
+
+# rule summarize_usage:
+#     input:
+#         "results/{sample}_splice_site_counts.txt"
+#     output:
+#         "results/step4_splice_usage/{sample}.splice_usage.txt"
+#     log:
+#         "logs/{sample}_summarize_usage.log"
+#     script:
+#         "scripts/summarize_splice_sites.py"

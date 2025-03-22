@@ -36,6 +36,7 @@ output_dir_stats: "results/step3_mapping_stats"
 #4.Splice Site Usage #
 ######################
 output_dir_splice: "results/step4_splice_usage"
+intron_bed: "annotation_files/hg19.intron.hmr.inclusive.plus.Lister.bed"
 ssu_params:
   min_anchor: 5
   big_file: false
@@ -59,3 +60,4 @@ expression_matrix_params:
 
 # Output file
 expression_matrix_output: "results/expression_matrix.txt"
+
