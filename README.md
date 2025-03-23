@@ -5,7 +5,7 @@
 
 # Quantas2
 
-![Splicing logo](quantas2.png)
+![Splicing logo](./figs/quantas2.png)
 *Ye Wang edited on Mar 22, 2025*
 
 
