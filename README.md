@@ -9,7 +9,7 @@
 *Ye Wang edited on Mar 22, 2025*
 
 
-Quantas2 is a Snakemake-based workflow for quantifying splicing from raw FASTQ sequencing files, featuring dedicated sub-workflows for `RNA expression level quantification (RPKM)` and `splice site usage (SSU)` analysis,etc. This workflow builds upon [Quantas1.0.9 ](https://zhanglab.c2b2.columbia.edu/index.php/Quantas_Documentation) in Chaolin Zhang lab.
+Quantas2 is a Snakemake-based workflow for quantifying splicing from raw FASTQ sequencing files, featuring dedicated sub-workflows for `RNA expression level quantification (RPKM)` and `splice site usage (SSU)` analysis,etc. This workflow builds upon [Quantas1.0.9](https://zhanglab.c2b2.columbia.edu/index.php/Quantas_Documentation)[1] in Chaolin Zhang lab.
 
 **Updates in Quantas2.0.0**:
 
@@ -59,7 +59,10 @@ For **questions, bug reports, and feature requests**,
 
 ## Citation
 
-This project was developed with reference to the following articles and open-source repositories:
-> Mertes, F., Matrot, B., Glaab, E., et al. (2021). *QuantAS: a comprehensive pipeline to study alternative splicing by absolute quantification of splice isoforms*. BMC Bioinformatics, 22, 580. https://doi.org/10.1186/s12859-021-04499-4
->[ModelGenerator](https://github.com/genbio-ai/ModelGenerator) and [grenepipe](https://github.com/moiexpositoalonsolab/grenepipe/tree/master) – for project structure and documentation style.
+This project was developed with reference to the following articles :
+~~~
+[1]  Mertes, F., Matrot, B., Glaab, E., et al. (2021). *QuantAS: a comprehensive pipeline to study alternative splicing by absolute quantification of splice isoforms*. BMC Bioinformatics, 22, 580. https://doi.org/10.1186/s12859-021-04499-4
+~~~
+Used open-source repositories:
 
+[ModelGenerator](https://github.com/genbio-ai/ModelGenerator) and [grenepipe](https://github.com/moiexpositoalonsolab/grenepipe/tree/master) – for project structure and documentation style.
