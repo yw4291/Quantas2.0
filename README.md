@@ -61,8 +61,10 @@ For **questions, bug reports, and feature requests**,
 
 This project was developed with reference to the following articles :
 ~~~
-[1]  Mertes, F., Matrot, B., Glaab, E., et al. (2021).QuantAS: a comprehensive pipeline to study alternative splicing by absolute quantification of splice isoforms*. BMC Bioinformatics, 22, 580. https://doi.org/10.1186/s12859-021-04499-4
+
 ~~~
 Used open-source repositories:
 
 [ModelGenerator](https://github.com/genbio-ai/ModelGenerator) and [grenepipe](https://github.com/moiexpositoalonsolab/grenepipe/tree/master) – for project structure and documentation style.
+
+<!-- [1]  Mertes, F., Matrot, B., Glaab, E., et al. (2021).QuantAS: a comprehensive pipeline to study alternative splicing by absolute quantification of splice isoforms. BMC Bioinformatics, 22, 580. https://doi.org/10.1186/s12859-021-04499-4 -->
