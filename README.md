@@ -61,7 +61,7 @@ For **questions, bug reports, and feature requests**,
 
 This project was developed with reference to the following articles :
 ~~~
-
+[1] Yan, Q. et al. Systematic discovery of regulated and conserved alternative exons in the mammalian brain reveals NMD modulating chromatin regulators. Proc. Natl Acad. Sci. USA 112,3445–3350 (2015).
 ~~~
 Used open-source repositories:
 
