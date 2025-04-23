@@ -8,17 +8,6 @@
 ![Splicing logo](./figs/quantas2.png)
 *Ye Wang edited on Mar 27, 2025*
 
-
-Quantas2 is a Snakemake-based workflow for quantifying splicing from raw FASTQ sequencing files, featuring dedicated sub-workflows for `RNA expression level quantification (RPKM)` and `splice site usage (SSU)` analysis,etc. This workflow builds upon [Quantas1.0.9](https://zhanglab.c2b2.columbia.edu/index.php/Quantas_Documentation)[1] in Chaolin Zhang lab.
-
-**Updates in Quantas2.0.0**:
-
-  - One command to run the each sub-workflow
-  - Automatic generating batch scripts, submitting and monitoring fastq files
-  - Different snakemake sub-workflow to choose
-  - Simple configuration via a single file
-  - Resuming from failing jobs
-
 ## Who uses Quantas?
 
 ### 🧬 Biologists 
@@ -32,6 +21,15 @@ Quantas2 is a Snakemake-based workflow for quantifying splicing from raw FASTQ s
 ### 🤖 ML Researchers 
 * Dealing with data for downstream ML models, eg.[DeltaSplice](https://github.com/chaolinzhanglab/DeltaSplice) 
 
+Quantas2 is a Snakemake-based workflow for quantifying RNA splicing from raw FASTQ sequencing files, featuring dedicated sub-workflows for `RNA expression level quantification (RPKM)` and `splice site usage (SSU)` analysis,etc. This workflow builds upon [Quantas1.0.9](https://zhanglab.c2b2.columbia.edu/index.php/Quantas_Documentation)[1] in Chaolin Zhang lab.
+
+**Updates in Quantas2.0.0**:
+
+  - One command to run the each sub-workflow
+  - Automatic generating batch scripts, submitting and monitoring fastq files
+  - Different snakemake sub-workflow to choose
+  - Simple configuration via a single file
+  - Resuming from failing jobs
 
 Workflow Overview
 -------------------
