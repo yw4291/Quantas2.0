@@ -38,12 +38,12 @@ Workflow Overview
 This table descriped all the sub-workflows contains in Quantas2.0.0:
 | Sub-workflow |Description | Input| Output|
 | ------ | ------| ------ |------ |
+|`Quantas_diff_RNAexp`| Quantification of the RNA expression level(RPKM) for each gene  |Reference genome `fasta` file; <br> Per-sample `fastq` files; <br> Group config file `group.config`| RNA expression level(RPKM)matrix: <br> `expression_matrix.txt`; <br>Diffrential RNA expression:<br>`groupA_vs_groupB.expr.diff.txt`<br> Snakemake report (optional) | 
+|`Quantas_diff_Splicing`| Quantification of the RNA expression level(RPKM) for each gene  |Reference genome `fasta` file; <br> Per-sample `fastq` files; <br> Group config file `group.config` | Percentage Splice In (PSI) matrix:<br>`splicing_matrix.txt`;<br>Diffrential PSI:<br>`groupA_vs_groupB.splicing.diff.txt`; <br> Snakemake report (optional) | 
 | `Quantas_SSU` |Quantification of the normalized 5' and 3' splicing site usage in each gene (value ranges from 0 to 1); <br>`Sample`is the name of each iput FASTQ file |Reference genome `fasta` file; <br> Per-sample `fastq` files |  Reads aligned file:`Sample.Aligned.out.sam` <br>  Sam file to bed file:`Sample.bed` <br> Coverage and statistics of mapped reads:`Sample.mapping_stats.txt` <br> Splice site usage of each splice site:`.splice_site_counts.txt` <br> Statistics of splice site usage in each gene:`sumarry.txt` <br>Snakemake report (optional) 
-|`Quantas_RNA_expr`| Quantification of the RNA expression level(RPKM) for each gene  |Reference genome `fasta` file; <br> Per-sample `fastq` files | RNA expression level(RPKM)matrix:`expression_matrix.txt`; <br> Snakemake report (optional) | 
 
 
 <!-- **Software/Packages used in this process:**
-
   - Read mapping (single or paired end)
     - [STAR](https://github.com/alexdobin/STAR)
     - Or [OLego](https://zhanglab.c2b2.columbia.edu/index.php/OLego)
@@ -63,8 +63,7 @@ This project was developed with reference to the following articles :
 ~~~
 [1] Yan, Q. et al. Systematic discovery of regulated and conserved alternative exons in the mammalian brain reveals NMD modulating chromatin regulators. Proc. Natl Acad. Sci. USA 112,3445–3350 (2015).
 ~~~
-Used open-source repositories:
 
-[ModelGenerator](https://github.com/genbio-ai/ModelGenerator) and [grenepipe](https://github.com/moiexpositoalonsolab/grenepipe/tree/master) – for project structure and documentation style.
+<!--Used open-source repositories:
 
-<!-- [1]  Mertes, F., Matrot, B., Glaab, E., et al. (2021).QuantAS: a comprehensive pipeline to study alternative splicing by absolute quantification of splice isoforms. BMC Bioinformatics, 22, 580. https://doi.org/10.1186/s12859-021-04499-4 -->
+[ModelGenerator](https://github.com/genbio-ai/ModelGenerator) and [grenepipe](https://github.com/moiexpositoalonsolab/grenepipe/tree/master) – for project structure and documentation style.-->
