@@ -19,7 +19,7 @@
 * Continuous integration and testing
 
 ### 🤖 ML Researchers 
-* Dealing with data for downstream ML models, eg.[DeltaSplice](https://github.com/chaolinzhanglab/DeltaSplice) 
+* Dealing with data for downstream deep learning models, eg.[DeltaSplice](https://github.com/chaolinzhanglab/DeltaSplice) 
 
 Introduction
 -------------------
